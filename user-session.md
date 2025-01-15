@@ -12,6 +12,7 @@
 ```
 
 ## Comando de PowerShell
+**Requiere permisos de Admin**
 ```ps1
 Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624} | Where-Object {($_.Properties[5].Value -eq 'Asir2')} | Select-Object TimeCreated, @{Name='Usuario';Expression={$_.Properties[5].Value}}
 ```
