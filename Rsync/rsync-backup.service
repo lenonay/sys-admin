@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync remote folders with rsync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/nonay/fetch.sh
+User=nonay
+
+[Install]
+WantedBy=multi-user.target
